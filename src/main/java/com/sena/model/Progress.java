@@ -1,39 +1,39 @@
 package com.sena.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Progress {
 
-    private Long id_progress;
-    private Date date;
+    private Long idProgress;
+    private LocalDate date;
     private Double weight;
     private String notes;
-    private User id_user;
+    private Long idUser;
 
     public Progress() {
     }
 
-    public Progress(Long id_progress, Date date, Double weight, String notes, User id_user) {
-        this.id_progress = id_progress;
+    public Progress(Long idProgress, LocalDate date, Double weight, String notes, Long idUser) {
+        this.idProgress = idProgress;
         this.date = date;
         this.weight = weight;
         this.notes = notes;
-        this.id_user = id_user;
+        this.idUser = idUser;
     }
 
-    public Long getId_progress() {
-        return id_progress;
+    public Long getIdProgress() {
+        return idProgress;
     }
 
-    public void setId_progress(Long id_progress) {
-        this.id_progress = id_progress;
+    public void setIdProgress(Long idProgress) {
+        this.idProgress = idProgress;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -53,11 +53,11 @@ public class Progress {
         this.notes = notes;
     }
 
-    public User getId_user() {
-        return id_user;
+    public Long getIdUser() {
+        return idUser;
     }
 
-    public void setId_user(User id_user) {
-        this.id_user = id_user;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 }
