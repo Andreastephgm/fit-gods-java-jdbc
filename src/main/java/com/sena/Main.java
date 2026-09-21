@@ -82,14 +82,14 @@ public class Main {
             System.out.println("-> Rutina registrada correctamente. ID: " + idRutinaGenerado + " (Usuario ID: " + idUsuarioGenerado + ")");
 
             System.out.println("\n6. Consultando listado de rutinas...");
-            List<Routine> listaRutinas = routineController.FindAllRoutines();
+            List<Routine> listaRutinas = routineController.findAllRoutines();
             System.out.println("-> Total rutinas en sistema: " + listaRutinas.size());
             for (Routine r : listaRutinas) {
                 System.out.println("   - [ID Rutina: " + r.getIdRoutine() + "] " + r.getName() + " | ID Usuario: " + r.getIdUser());
             }
 
             System.out.println("\n7. Buscando rutina por ID (" + idRutinaGenerado + ")...");
-            Routine rutinaEncontrada = routineController.FinfByIdRoutine(idRutinaGenerado);
+            Routine rutinaEncontrada = routineController.finfByIdRoutine(idRutinaGenerado);
             if (rutinaEncontrada != null) {
                 System.out.println("-> Rutina localizada: " + rutinaEncontrada.getName() + " | Objetivo: " + rutinaEncontrada.getObjective());
             }
@@ -99,16 +99,16 @@ public class Main {
                 rutinaEncontrada.setName("Rutina Torso / Pierna Avanzada");
                 rutinaEncontrada.setObjective("Fuerza e hipertrofia");
 
-                routineController.UpdateRoutine(rutinaEncontrada);
+                routineController.updateRoutine(rutinaEncontrada);
 
-                Routine rutinaActualizada = routineController.FinfByIdRoutine(idRutinaGenerado);
+                Routine rutinaActualizada = routineController.finfByIdRoutine(idRutinaGenerado);
                 System.out.println("-> Rutina modificada: " + rutinaActualizada.getName() + " | Objetivo: " + rutinaActualizada.getObjective());
             }
 
             System.out.println("\n9. Eliminando rutina ID (" + idRutinaGenerado + ")...");
             routineController.deleteRoutineById(idRutinaGenerado);
 
-            Routine rutinaEliminada = routineController.FinfByIdRoutine(idRutinaGenerado);
+            Routine rutinaEliminada = routineController.finfByIdRoutine(idRutinaGenerado);
             if (rutinaEliminada == null) {
                 System.out.println("-> Verificación: Rutina removida de la base de datos.");
             }

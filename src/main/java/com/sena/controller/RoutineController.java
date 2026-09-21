@@ -17,15 +17,15 @@ public class RoutineController {
         return  routineService.save(routine);
     }
 
-    public List<Routine> FindAllRoutines(){
+    public List<Routine> findAllRoutines(){
         return  routineService.findAll();
     }
 
-    public Routine FinfByIdRoutine(Long id){
+    public Routine finfByIdRoutine(Long id){
         return  routineService.findById(id);
     }
 
-    public Routine UpdateRoutine(Routine routine){
+    public Routine updateRoutine(Routine routine){
         return  routineService.update(routine);
     }
 
