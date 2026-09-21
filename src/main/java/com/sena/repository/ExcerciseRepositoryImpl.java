@@ -19,13 +19,13 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
 
             statement.setString(1, excercise.getName());
             statement.setString(2, excercise.getDescription());
-            statement.setString(3, excercise.getMuscular_group());
+            statement.setString(3, excercise.getMuscularGroup());
 
             statement.executeUpdate();
 
             try(ResultSet generatedKeys = statement.getGeneratedKeys()){
                 if(generatedKeys.next()){
-                    excercise.setId_excercise(generatedKeys.getLong(1));
+                    excercise.setIdExercise(generatedKeys.getLong(1));
                 }
             }
 
@@ -49,10 +49,10 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
            while(resultSet.next()){
 
                Excercise excercise  = new Excercise();
-               excercise.setId_excercise(resultSet.getLong("exc"));
+               excercise.setIdExercise(resultSet.getLong("exc"));
                excercise.setName(resultSet.getString("name"));
                excercise.setDescription(resultSet.getString("description"));
-               excercise.setMuscular_group(resultSet.getString("muscularGroup"));
+               excercise.setMuscularGroup(resultSet.getString("muscularGroup"));
 
                excercises.add(excercise);
            }
@@ -67,7 +67,7 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
     @Override
     public Excercise findById(Long id) {
 
-        String sql = "SELECT * FROM excercises WHERE idExcercise = ?";
+        String sql = "SELECT * FROM excercises WHERE idExercise = ?";
 
         try(Connection connection = ConnectionDB.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql)){
@@ -78,10 +78,10 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
             if(resultSet.next()){
                 Excercise excercise = new Excercise();
 
-                excercise.setId_excercise(resultSet.getLong("idExcercise"));
+                excercise.setIdExercise(resultSet.getLong("idExercise"));
                 excercise.setName(resultSet.getString("name"));
                 excercise.setDescription(resultSet.getString("description"));
-                excercise.setMuscular_group(resultSet.getString("muscularGroup"));
+                excercise.setMuscularGroup(resultSet.getString("muscularGroup"));
 
                 return excercise;
             }
@@ -97,15 +97,15 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
     @Override
     public Excercise update(Excercise excercise) {
 
-        String sql = "UPDATE excercises SET name = ? , description = ? , muscularGroup = ? WHERE idExcercise = ?";
+        String sql = "UPDATE excercises SET name = ? , description = ? , muscularGroup = ? WHERE idExercise = ?";
 
         try(Connection connection = ConnectionDB.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql)){
 
             statement.setString(1, excercise.getName());
             statement.setString(2, excercise.getDescription());
-            statement.setString(3, excercise.getMuscular_group());
-            statement.setLong(4, excercise.getId_excercise());
+            statement.setString(3, excercise.getMuscularGroup());
+            statement.setLong(4, excercise.getIdExercise());
 
             statement.executeUpdate();
 
@@ -118,7 +118,7 @@ public class ExcerciseRepositoryImpl implements  ExcerciseRepository{
     @Override
     public void deleteById(Long id) {
 
-        String sql = "DELETE FROM excercises WHERE idExcercise = ? ";
+        String sql = "DELETE FROM excercises WHERE idExercise = ? ";
 
         try(Connection connection = ConnectionDB.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql)){

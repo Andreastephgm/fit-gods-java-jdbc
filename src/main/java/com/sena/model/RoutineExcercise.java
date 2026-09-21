@@ -2,6 +2,7 @@ package com.sena.model;
 
 public class RoutineExcercise {
 
+    private Long idRoutineExcercise;
     private Long idRoutine;
     private Long idExercise;
     private Integer series;
@@ -11,12 +12,21 @@ public class RoutineExcercise {
     public RoutineExcercise() {
     }
 
-    public RoutineExcercise(Long idRoutine, Long idExercise, Integer series, Integer repetitions, Integer rest) {
+    public RoutineExcercise(Long idRoutineExcercise, Long idRoutine, Long idExercise, Integer series, Integer repetitions, Integer rest) {
+        this.idRoutineExcercise = idRoutineExcercise;
         this.idRoutine = idRoutine;
         this.idExercise = idExercise;
         this.series = series;
         this.repetitions = repetitions;
         this.rest = rest;
+    }
+
+    public Long getIdRoutineExcercise() {
+        return idRoutineExcercise;
+    }
+
+    public void setIdRoutineExcercise(Long idRoutineExcercise) {
+        this.idRoutineExcercise = idRoutineExcercise;
     }
 
     public Long getIdRoutine() {

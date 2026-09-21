@@ -1,27 +1,27 @@
 package com.sena.model;
 
 public class Excercise {
-    private Long idExcercise;
+    private Long idExercise;
     private String name;
     private  String description;
-    private String muscular_group;
+    private String muscularGroup;
 
     public Excercise() {
     }
 
-    public Excercise(Long idExcercise, String name, String description, String muscular_group) {
-        this.idExcercise = idExcercise;
+    public Excercise(Long idExercise, String name, String description, String muscularGroup) {
+        this.idExercise = idExercise;
         this.name = name;
         this.description = description;
-        this.muscular_group = muscular_group;
+        this.muscularGroup = muscularGroup;
     }
 
-    public Long getId_excercise() {
-        return idExcercise;
+    public Long getIdExercise() {
+        return idExercise;
     }
 
-    public void setId_excercise(Long idExcercise) {
-        this.idExcercise = idExcercise;
+    public void setIdExercise(Long idExercise) {
+        this.idExercise = idExercise;
     }
 
     public String getName() {
@@ -40,11 +40,11 @@ public class Excercise {
         this.description = description;
     }
 
-    public String getMuscular_group() {
-        return muscular_group;
+    public String getMuscularGroup() {
+        return muscularGroup;
     }
 
-    public void setMuscular_group(String muscular_group) {
-        this.muscular_group = muscular_group;
+    public void setMuscularGroup(String muscularGroup) {
+        this.muscularGroup = muscularGroup;
     }
 }
